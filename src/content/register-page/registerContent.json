@@ -1,0 +1,39 @@
+{
+    "card":{
+        "cardTitle": "Cadastre-se",
+    "cardSubtitle": "Preencha seus dados para se cadastrar!",
+    "form": {
+        "email":{
+            "label": "Digite seu email",
+            "placeholder":"email@exemplo.com.br",
+            "required": "O email e obrigatorio",
+            "error": "Email invalido"
+        },
+        "password":{
+            "label": "Digite sua senha",
+            "placeholder":"MinhaSenha@123",
+            "required": "A senha e obrigatoria",
+            "error": "A senha tem que ter mais que 8 caracteres"
+            
+        },
+        "confirmPassword":{
+            "label": "Confirme sua senha",
+            "placeholder": "ConfimacaoSenha@123",
+            "required": "Confirmacao invalida",
+            "error": "As senhas digitadas devem ser iguais"
+        },
+        "adminKey":{
+            "label": "Informe a chave administrativa",
+            "placeholder": "chaveadministrativa123",
+            "required": "A chave administrativa deve ser informada",
+            "error": "Chave administrativa incorreta"
+        },
+        "button": "Se cadastrar"
+    },
+    "recoverPassword": "Recuperar senha",
+    "register": {
+        "registerDescription": "Ja tem uma conta?",
+        "registerButton": "Entrar"
+    }
+    }
+} 
