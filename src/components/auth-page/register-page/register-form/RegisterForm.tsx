@@ -52,6 +52,7 @@ export const RegisterForm =()=>{
                 )
             }
             />
+            
             <Controller 
             name="password"
             control={control}

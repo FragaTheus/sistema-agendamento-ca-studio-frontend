@@ -1,0 +1,9 @@
+{
+    "card": {
+        "title": "Recuperar senha",
+        "subtitle": "Informe os dados para recuperar sua senha",
+        "singinHeader": "Ainda nao tem uma conta?",
+        "singin": "Cadastre-se",
+        "login": "Entrar"
+    }
+}
