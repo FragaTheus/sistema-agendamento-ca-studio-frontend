@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Button, FormControl, FormHelperText, FormLabel, Input } from "@mui/joy";
+import recoveryContent from "@/content/recovery-page-content/recoveryContent.json"
 import { useState } from "react";
 import { Controller, useForm, } from "react-hook-form";
 
@@ -49,17 +50,17 @@ export const RecoveryForm=()=>{
             name="email"
             control={control}
             rules={{
-                required: "Texto informando que email e obrigatorio",
+                required: recoveryContent.email.required,
                 pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Texto que vai vir do json para email digitado nao condiz com email"
+                    message: recoveryContent.email.format
                 }
             }}
             render={({field})=>(
                 <FormControl error={!!errors.email}>
-                    <FormLabel>Texto que vai vir do json para label do email</FormLabel>
-                        <Input variant="outlined" type="email" placeholder="json que vem com o exemplo de email" {...field} value={field.value}></Input>
-                        {errors.email && <FormHelperText>Json que vai informar sobre o erro no campo digitado</FormHelperText>}
+                    <FormLabel>{recoveryContent.email.label}</FormLabel>
+                        <Input variant="outlined" type="email" placeholder={recoveryContent.email.placeholder} {...field} value={field.value}></Input>
+                        {errors.email && <FormHelperText>{errors.email.message}</FormHelperText>}
                 </FormControl>
             )}
             />
@@ -70,18 +71,18 @@ export const RecoveryForm=()=>{
             name="verificationCode"
             control={control}
             rules={{
-                required: "Texto que vai informar que campo e requerido",
+                required: recoveryContent.verificationCode.required,
                 validate: (verificationCode)=> verificationCode === currentCode.toString(),
                 pattern: {
                     value: /^\d+$/,
-                    message: "Mesagem informando que o codigo esta fora do valor esperado"
+                    message: recoveryContent.verificationCode.format
                 }
                 }}
             render={({field})=>(
                 <FormControl error={!!errors.verificationCode}>
-                    <FormLabel>Label do codigo de verificacao</FormLabel>
-                    <Input type={"number"} variant="outlined" placeholder="123456" {...field} value={field.value}></Input>
-                    {errors.verificationCode && <FormHelperText>Texto que ajuda a preencher o form</FormHelperText>}
+                    <FormLabel>{recoveryContent.verificationCode.label}</FormLabel>
+                    <Input type={"number"} variant="outlined" placeholder={recoveryContent. verificationCode.placeholder} {...field} value={field.value}></Input>
+                    {errors.verificationCode && <FormHelperText>{errors.verificationCode.message}</FormHelperText>}
                 </FormControl>
             )}
             />
@@ -92,19 +93,19 @@ export const RecoveryForm=()=>{
                 name="password"
                 control={control}
                 rules={{
-                    required: "Texto que vai brotar do json",
+                    required: recoveryContent.password.required,
                     pattern: {
                         value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/,
-                        message: "Texto que vai brotar do json"
+                        message: recoveryContent.password.format
                     }
                 }}
                 render={
                     ({field})=>(
                         <FormControl error={!!errors.password}>
                             <FormLabel>
-                                "Texto que vai brotar do json"
+                                {recoveryContent.password.label}
                             </FormLabel>
-                            <Input variant="outlined" type="password" placeholder="Texto que vai brotar do json" {...field} value={field.value}/>
+                            <Input variant="outlined" type="password" placeholder={recoveryContent.password.placeholder} {...field} value={field.value}/>
                             {errors.password && (<FormHelperText>{errors.password.message}</FormHelperText>)}
                         </FormControl>
                     )
@@ -117,21 +118,25 @@ export const RecoveryForm=()=>{
                 name="confirmPassword"
                 control={control}
                 rules={{
-                    required: "Texto que vai brotar do json",
-                    validate:(value) => value === passwordValue || "Texto que vai brotar do json"
+                    required: recoveryContent.confirmPassword.required,
+                    validate:(value) => value === passwordValue || recoveryContent.confirmPassword.format
                 }}
                 render={
                     ({field})=> 
                         <FormControl error={!!errors.confirmPassword}>
-                            <FormLabel>{"Texto que vai brotar do json"}</FormLabel>
-                            <Input variant="outlined" type="password" placeholder={"Texto que vai brotar do json"} {...field} value={field.value}/>
+                            <FormLabel>{recoveryContent.confirmPassword.label}</FormLabel>
+                            <Input variant="outlined" type="password" placeholder={recoveryContent.confirmPassword.placeholder} {...field} value={field.value}/>
                             {errors.confirmPassword && <FormHelperText>{errors.confirmPassword.message}</FormHelperText>}
                         </FormControl>
                 }
                 />
             )}
             
-            <Button type="submit" disabled={!isValid}>Recuperar conta</Button>
+            <Button type="submit" disabled={!isValid}>
+                {step === "email" && "Enviar codigo de verificacao"}
+                {step === "verificationCode" && "Verificar codigo"}
+                {step === "password" && "Recuperar senha"}
+            </Button>
         </Box>
     );
 }
