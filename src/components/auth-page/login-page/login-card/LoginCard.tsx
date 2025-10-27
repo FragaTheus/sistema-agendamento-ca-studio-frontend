@@ -22,7 +22,7 @@ export const LoginCard = () => {
                     <Box id="login-form" width={"100%"} gap={"20px"}>
                         <LoginForm/>
                     </Box>
-                    <Button variant="plain">{loginContent.card.recoverPassword}</Button>
+                    <Button variant="plain" onClick={()=>router.push("/auth/recovery")}>{loginContent.card.recoverPassword}</Button>
                     <Divider/>
                     <Box id="login-register" width={"100%"} display={"flex"} alignItems={"center"} gap={"5px"} flexDirection={"column"}>
                         <Typography>{loginContent.card.register.registerDescription}</Typography>

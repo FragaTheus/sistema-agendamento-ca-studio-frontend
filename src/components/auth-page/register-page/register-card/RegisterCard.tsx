@@ -25,7 +25,7 @@ export const RegisterCard=()=>{
                     <Box id="login-register" width={"100%"} display={"flex"} alignItems={"center"} gap={"5px"} flexDirection={"column"}>
                         <Typography>{registerContent.card.register.registerDescription}</Typography>
                         <Button variant="plain" onClick={()=> router.push("/auth/login")}>{registerContent.card.register.registerButton}</Button>
-                        <Button variant="plain" >{registerContent.card.recoverPassword}</Button>
+                        <Button variant="plain" onClick={()=>router.push("/auth/recovery")}>{registerContent.card.recoverPassword}</Button>
                     </Box>                    
                 </Box>
         </CardContent>
