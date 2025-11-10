@@ -1,0 +1,30 @@
+{
+    "card":{
+        "cardTitle": "Login",
+    "cardSubtitle": "Preencha seus dados para se logar!",
+    "form": {
+        "email":{
+            "label": "Digite seu email",
+            "placeholder":"email@exemplo.com.br",
+            "required": "O email e obrigatorio",
+            "error": "Email invalido"
+        },
+        "password":{
+            "label": "Digite sua senha",
+            "placeholder":"minhasenha123",
+            "required": "A senha e obrigatoria",
+            "error": "A senha tem que ter mais que 8 caracteres"
+            
+        },
+        "button": "Entrar"
+    },
+    "recoverPassword": "Recuperar senha",
+    "register": {
+        "registerDescription": "Ainda nao tem uma conta?",
+        "registerButton": "Se cadastrar"
+    }
+    },
+    "loginPageLogo": "Cristiane Aguiar Studio",
+    "loginPageTitle": "Onde cada detalhe importa",
+    "loginPageText": "Organize cada detalhe e acompanhe de perto o que faz o seu salão brilhar."
+} 

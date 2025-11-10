@@ -1,0 +1,33 @@
+{
+    "card": {
+        "title": "Recuperar senha",
+        "subtitle": "Informe os dados para recuperar sua senha",
+        "singinHeader": "Ainda nao tem uma conta?",
+        "singin": "Cadastre-se",
+        "login": "Entrar"
+    },
+    "email":{
+        "label": "Digite seu email",
+        "required": "O campo email e obrigatorio",
+        "format": "O formato do email inserido e invalido",
+        "placeholder": "meuemail@email.com"
+    },
+    "verificationCode": {
+        "label": "Digite o codigo de verificacao",
+        "required": "O campo e obrigatorio",
+        "format":"Codigo inserido e invalido",
+        "placeholder": "123456"
+    },
+    "password": {
+        "label": "Digite sua senha",
+        "required":"O campo e obrigatorio",
+        "format":"Senha inserida e invalida",
+        "placeholder": "MinhaSenha@123"
+    },
+    "confirmPassword": {
+        "label":"Confirme sua senha",
+        "required":"O campo e obrigatorio",
+        "format":"Senha inserida nao condiz com a senha acima",
+        "placeholder":"MinhaSenha@123"
+    }
+}
