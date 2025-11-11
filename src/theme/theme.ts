@@ -10,7 +10,7 @@ export const theme = extendTheme({
                     surface: "#ffffff"
                 },
                 text:{
-                    primary: "#1c1c1cff",
+                    primary: "#424242",
                     secondary: "#bf3156"
                 },
                 primary: {
@@ -43,6 +43,11 @@ export const theme = extendTheme({
                 }
             }
         }
+        
+    },
+    fontFamily: {
+        display: "var(--font-blackgold), var(--joy-fontFamily-fallback)",
+        body: "var(--font-poppins-thin), var(--joy-fontFamily-fallback)"
     },
     components: {
         JoyInput: {
@@ -69,7 +74,8 @@ export const theme = extendTheme({
                     }
                 }
             }
-        }
+        },
+       
     }
 });
 
