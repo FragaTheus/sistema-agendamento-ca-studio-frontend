@@ -15,8 +15,8 @@ export const Gallery = () => {
       gap={"50px"}
     >
       <Card
-        variant="outlined"
-        sx={{ width: "50%", height: "70%", bgcolor: "transparent" }}
+        variant="soft"
+        sx={{ width: "80%", height: "70%", bgcolor: "background.body" }}
       >
         <Box
           alignItems={"center"}
@@ -25,10 +25,10 @@ export const Gallery = () => {
           flexDirection={"column"}
           flex={1}
         >
-          <Typography level="h3" sx={{ color: "text.primary" }}>
+          <Typography level="h3" sx={{ color: "primary.300" }}>
             Beleza Sob Medida: Tratamentos Feitos para Você!
           </Typography>
-          <Typography level="h3" sx={{ color: "primary.400" }}>
+          <Typography level="h3" sx={{ color: "text.primary" }}>
             Galeria Antes e Depois
           </Typography>
         </Box>

@@ -22,11 +22,10 @@ export default function Home() {
       <SectionLayout bgColor="background.body">
         <Procedures />
       </SectionLayout>
-      <SectionLayout bgColor="background.body">
+      <SectionLayout bgColor="background.surface">
         <Gallery />
       </SectionLayout>
       <SectionLayout bgColor="primary.400">
-        <Products />
         <FAQ />
       </SectionLayout>
       <Footer />

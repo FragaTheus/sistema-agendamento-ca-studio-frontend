@@ -2,74 +2,118 @@
 
 import { Button, Divider, List, ListItemDecorator, Typography } from "@mui/joy";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useResContext } from "@/context/responsive-context/ResponsiveContext";
+import { color } from "framer-motion";
 
 export const ProcedureList = () => {
+  const { isMobile } = useResContext();
   return (
     <List>
+      <Divider sx={isMobile ? { backgroundColor: "primary.400" } : {}} />
       <Button
         variant="plain"
-        sx={{
-          height: "12svh",
-          borderRadius: "0px",
-          justifyContent: "space-between",
-        }}
+        sx={
+          isMobile
+            ? {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "center",
+              }
+            : {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "space-between",
+              }
+        }
       >
         <Typography level="h4" sx={{ color: "text.primary" }}>
           Pele
         </Typography>
-        <ListItemDecorator>
-          <ArrowForwardIosIcon />
-        </ListItemDecorator>
+        {!isMobile && (
+          <ListItemDecorator>
+            <ArrowForwardIosIcon />
+          </ListItemDecorator>
+        )}
       </Button>
-      <Divider />
+      <Divider sx={isMobile ? { backgroundColor: "primary.400" } : {}} />
       <Button
         variant="plain"
-        sx={{
-          height: "12svh",
-          borderRadius: "0px",
-          justifyContent: "space-between",
-        }}
+        sx={
+          isMobile
+            ? {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "center",
+              }
+            : {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "space-between",
+              }
+        }
       >
         <Typography level="h4" sx={{ color: "text.primary" }}>
           Lábio
         </Typography>
-        <ListItemDecorator>
-          <ArrowForwardIosIcon />
-        </ListItemDecorator>
+        {!isMobile && (
+          <ListItemDecorator>
+            <ArrowForwardIosIcon />
+          </ListItemDecorator>
+        )}
       </Button>
-      <Divider />
+      <Divider sx={isMobile ? { backgroundColor: "primary.400" } : {}} />
       <Button
         variant="plain"
-        sx={{
-          height: "12svh",
-          borderRadius: "0px",
-          justifyContent: "space-between",
-        }}
+        sx={
+          isMobile
+            ? {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "center",
+              }
+            : {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "space-between",
+              }
+        }
       >
         <Typography level="h4" sx={{ color: "text.primary" }}>
           Cílios
         </Typography>
-        <ListItemDecorator>
-          <ArrowForwardIosIcon />
-        </ListItemDecorator>
+        {!isMobile && (
+          <ListItemDecorator>
+            <ArrowForwardIosIcon />
+          </ListItemDecorator>
+        )}
       </Button>
-      <Divider />
+      <Divider sx={isMobile ? { backgroundColor: "primary.400" } : {}} />
       <Button
         variant="plain"
-        sx={{
-          height: "12svh",
-          borderRadius: "0px",
-          justifyContent: "space-between",
-        }}
+        sx={
+          isMobile
+            ? {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "center",
+              }
+            : {
+                height: "12svh",
+                borderRadius: "0px",
+                justifyContent: "space-between",
+              }
+        }
       >
         <Typography level="h4" sx={{ color: "text.primary" }}>
           Sobrancelha
         </Typography>
-        <ListItemDecorator>
-          <ArrowForwardIosIcon />
-        </ListItemDecorator>
+        {!isMobile && (
+          <ListItemDecorator>
+            <ArrowForwardIosIcon />
+          </ListItemDecorator>
+        )}
       </Button>
-      <Divider />
+      <Divider sx={isMobile ? { backgroundColor: "primary.400" } : {}} />
     </List>
   );
 };

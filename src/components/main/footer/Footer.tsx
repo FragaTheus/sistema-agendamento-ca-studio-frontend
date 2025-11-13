@@ -1,7 +1,6 @@
 "use client";
 
-import { Box } from "@mui/joy";
-import { FAQ } from "../../home-page/faq/FAQ";
+import { Box, Stack } from "@mui/joy";
 
 export const Footer = () => {
   return (
@@ -12,6 +11,11 @@ export const Footer = () => {
       alignItems={"center"}
       justifyContent={"center"}
       minHeight={"60svh"}
-    ></Box>
+    >
+      <Stack width={"80%"} height={"100%"} sx={{}}>
+        <Stack width={"50%"}></Stack>
+        <Stack width={"50%"}></Stack>
+      </Stack>
+    </Box>
   );
 };
