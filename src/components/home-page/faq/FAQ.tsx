@@ -1,7 +1,8 @@
 "use client";
 
+import { useResContext } from "@/context/responsive-context/ResponsiveContext";
 import { KeyboardArrowDown } from "@mui/icons-material";
-import { Box, IconButton, Sheet, Stack, Typography } from "@mui/joy";
+import { Box, Card, IconButton, Sheet, Stack, Typography } from "@mui/joy";
 import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -37,9 +38,11 @@ export const FAQ = () => {
     setOpenId(openId === id ? null : id);
   };
 
+  const { isTablet } = useResContext();
+
   return (
     <Stack
-      width={"60%"}
+      width={isTablet ? "90%" : "60%"}
       height={"50svh"}
       flexDirection={"column"}
       alignItems={"center"}
@@ -47,14 +50,14 @@ export const FAQ = () => {
       spacing={2}
     >
       <Box>
-        <Typography level="h2" sx={{ color: "primary.100" }}>
+        <Typography level="title-lg" sx={{ color: "primary.100" }}>
           Duvidas Frequentes
         </Typography>
       </Box>
       {FAQContent.map((c) => (
         <Sheet
           key={c.id}
-          variant="soft"
+          variant="outlined"
           sx={{
             width: "60%",
             alignSelf: "center",
@@ -70,7 +73,7 @@ export const FAQ = () => {
             onClick={() => handleToggle(c.id)}
             direction={"row"}
           >
-            <Typography level="title-md">{c.question}</Typography>
+            <Typography level="body-md">{c.question}</Typography>
             <IconButton
               variant="plain"
               sx={{
@@ -89,7 +92,7 @@ export const FAQ = () => {
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: easeInOut }}
               >
-                <Typography level="body-sm" sx={{ color: "primary.300" }}>
+                <Typography level="body-md" sx={{ color: "primary.300" }}>
                   {c.answer}
                 </Typography>
               </motion.div>

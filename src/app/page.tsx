@@ -1,8 +1,8 @@
 import { About } from "@/components/home-page/about/About";
 import { FAQ } from "@/components/home-page/faq/FAQ";
-import { Products } from "@/components/home-page/faq/Products";
 import { Gallery } from "@/components/home-page/gallery/Galerry";
 import { Procedures } from "@/components/home-page/procedures/Procedures";
+import { AppDrawer } from "@/components/main/drawer/Drawer";
 import { Footer } from "@/components/main/footer/Footer";
 import { Header } from "@/components/main/header/Header";
 import { HeroLayout } from "@/components/main/hero/HeroLayout";
@@ -13,19 +13,20 @@ export default function Home() {
   return (
     <>
       <Header />
-      <SectionLayout>
+      <AppDrawer />
+      <SectionLayout id="hero">
         <HeroLayout title="Sinta-se unica!" buttonText="Cuide-se agora" />
       </SectionLayout>
-      <Box>
+      <Box id="sobre">
         <About />
       </Box>
-      <SectionLayout bgColor="background.body">
+      <SectionLayout id="procedimentos" bgColor="background.body">
         <Procedures />
       </SectionLayout>
-      <SectionLayout bgColor="background.surface">
+      <SectionLayout id="galeria" bgColor="background.surface">
         <Gallery />
       </SectionLayout>
-      <SectionLayout bgColor="primary.400">
+      <SectionLayout id="FAQ" bgColor="primary.400">
         <FAQ />
       </SectionLayout>
       <Footer />

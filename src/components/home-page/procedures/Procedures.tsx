@@ -5,12 +5,12 @@ import { ProcedureList } from "./ProcedureList";
 import { useResContext } from "@/context/responsive-context/ResponsiveContext";
 
 export const Procedures = () => {
-  const { isMobile } = useResContext();
+  const { isTablet } = useResContext();
   return (
     <Card
       variant="soft"
       sx={
-        isMobile
+        isTablet
           ? { bgcolor: "background.surface", width: "70%", height: "90%" }
           : { bgcolor: "background.surface", width: "70%", height: "70%" }
       }
@@ -20,9 +20,9 @@ export const Procedures = () => {
         height={"10%"}
         display={"flex"}
         alignItems={"center"}
-        justifyContent={isMobile ? "center" : "flex-start"}
-        paddingLeft={isMobile ? "5px" : "50px"}
-        paddingTop={isMobile ? "5px" : "50px"}
+        justifyContent={isTablet ? "center" : "flex-start"}
+        paddingLeft={isTablet ? "5px" : "50px"}
+        paddingTop={isTablet ? "5px" : "50px"}
       >
         <Typography level="title-lg" sx={{ color: "text.secondary" }}>
           Procedimentos
@@ -38,13 +38,13 @@ export const Procedures = () => {
         }}
       >
         <Box
-          width={isMobile ? "100%" : "50%"}
+          width={isTablet ? "100%" : "50%"}
           height={"100%"}
-          padding={isMobile ? "0px" : "20px"}
+          padding={isTablet ? "0px" : "20px"}
         >
           <ProcedureList />
         </Box>
-        {!isMobile && (
+        {!isTablet && (
           <Box
             width={"50%"}
             height={"100%"}
@@ -53,7 +53,7 @@ export const Procedures = () => {
             display={"flex"}
           >
             <AspectRatio
-              ratio={"2/1.9"}
+              ratio={"1/1"}
               sx={{ width: "clamp(300px, 30vw, 550px)" }}
             >
               <img src={"/hero2.jpeg"} />

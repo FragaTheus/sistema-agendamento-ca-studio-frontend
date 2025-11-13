@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import { ThemeContextProvider } from "@/context/theme-context/ThemeContext";
 import { Poppins } from "next/font/google";
+import { ThemeContextProvider } from "@/context/theme-context/ThemeContext";
 import { ResponsiveProvider } from "@/context/responsive-context/ResponsiveContext";
+import { DrawerContextProvider } from "@/context/drawer-context/DrawerContext";
+import { ClientProvider } from "@/provider/ClientProvider";
 
 export const metadata: Metadata = {
   title: "Cristiane Aguiar Studio",
@@ -23,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={poppins.variable}>
       <body>
-        <ResponsiveProvider>
-          <ThemeContextProvider>{children}</ThemeContextProvider>
-        </ResponsiveProvider>
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   );

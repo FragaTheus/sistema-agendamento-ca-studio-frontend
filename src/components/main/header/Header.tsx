@@ -5,16 +5,20 @@ import MenuIcon from "@mui/icons-material/Menu";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useResContext } from "@/context/responsive-context/ResponsiveContext";
+import { useDrawerContext } from "@/context/drawer-context/DrawerContext";
 
 export const Header = () => {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const { isTablet } = useResContext();
+  const { toogleDrawer } = useDrawerContext();
 
   useEffect(() => {
     setIsMounted(true);
 
-    const viewportHeigh = window.innerHeight;
+    const viewportHeigh = window.innerHeight * 0.6;
 
     const handleScroll = () => {
       setScrolled(window.scrollY > viewportHeigh);
@@ -25,6 +29,10 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Box
@@ -74,7 +82,7 @@ export const Header = () => {
             />
           </IconButton>
           <Box id="menu-icon" display={"flex"} alignItems={"center"}>
-            <IconButton>
+            <IconButton onClick={() => toogleDrawer()}>
               <MenuIcon
                 sx={scrolled ? { color: "primary.300" } : { color: "inherit" }}
               />

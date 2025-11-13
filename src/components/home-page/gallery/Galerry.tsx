@@ -2,11 +2,13 @@
 
 import { Box, Card, Typography } from "@mui/joy";
 import BeforeAfterGallery from "./BeforeAfter";
+import { useResContext } from "@/context/responsive-context/ResponsiveContext";
 
 export const Gallery = () => {
+  const { isMobile } = useResContext();
   return (
     <Box
-      width={"80%"}
+      width={"90%"}
       height={"100%"}
       display={"flex"}
       flexDirection={"column"}
@@ -25,11 +27,11 @@ export const Gallery = () => {
           flexDirection={"column"}
           flex={1}
         >
-          <Typography level="h3" sx={{ color: "primary.300" }}>
-            Beleza Sob Medida: Tratamentos Feitos para Você!
+          <Typography level="title-md" sx={{ color: "primary.300" }}>
+            Beleza Sob Medida
           </Typography>
-          <Typography level="h3" sx={{ color: "text.primary" }}>
-            Galeria Antes e Depois
+          <Typography level="title-sm" sx={{ color: "text.primary" }}>
+            Antes e Depois
           </Typography>
         </Box>
         <Box>

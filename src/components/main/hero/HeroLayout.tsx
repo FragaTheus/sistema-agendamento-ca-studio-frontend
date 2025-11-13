@@ -11,7 +11,6 @@ interface IHeroLayout {
 export const HeroLayout: React.FC<IHeroLayout> = ({ title }) => {
   return (
     <Box
-      id="hero"
       width={"100%"}
       height={"100svh"}
       display={"flex"}
@@ -54,11 +53,17 @@ export const HeroLayout: React.FC<IHeroLayout> = ({ title }) => {
         flexDirection={"column"}
         gap={"10px"}
       >
-        <Typography level="h1" sx={{ color: "#ffffff" }}>
+        <Typography level="title-lg" sx={{ color: "#ffffff" }}>
           {title}
         </Typography>
-        <Button variant="outlined">
-          <Typography level="h4" sx={{ color: "inherit" }}>
+        <Button
+          variant="outlined"
+          component="a"
+          href="https://wa.me/5511940436267"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Typography level="title-md" sx={{ color: "inherit" }}>
             Cuide-se agora
           </Typography>
         </Button>

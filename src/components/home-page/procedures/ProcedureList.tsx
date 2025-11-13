@@ -26,7 +26,7 @@ export const ProcedureList = () => {
               }
         }
       >
-        <Typography level="h4" sx={{ color: "text.primary" }}>
+        <Typography level="body-md" sx={{ color: "text.primary" }}>
           Pele
         </Typography>
         {!isMobile && (
@@ -52,7 +52,7 @@ export const ProcedureList = () => {
               }
         }
       >
-        <Typography level="h4" sx={{ color: "text.primary" }}>
+        <Typography level="body-md" sx={{ color: "text.primary" }}>
           Lábio
         </Typography>
         {!isMobile && (
@@ -78,7 +78,7 @@ export const ProcedureList = () => {
               }
         }
       >
-        <Typography level="h4" sx={{ color: "text.primary" }}>
+        <Typography level="body-md" sx={{ color: "text.primary" }}>
           Cílios
         </Typography>
         {!isMobile && (
@@ -104,7 +104,7 @@ export const ProcedureList = () => {
               }
         }
       >
-        <Typography level="h4" sx={{ color: "text.primary" }}>
+        <Typography level="body-md" sx={{ color: "text.primary" }}>
           Sobrancelha
         </Typography>
         {!isMobile && (

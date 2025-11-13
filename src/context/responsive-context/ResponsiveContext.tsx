@@ -6,6 +6,7 @@ import React, { createContext, useContext } from "react";
 
 interface IResponsiveContext {
   isMobile: boolean;
+  isTablet: boolean;
 }
 
 const ResponsiveContext = createContext({} as IResponsiveContext);
@@ -19,8 +20,10 @@ export const ResponsiveProvider: React.FC<IResponsiveProvider> = ({
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <ResponsiveContext.Provider value={{ isMobile }}>
+    <ResponsiveContext.Provider value={{ isMobile, isTablet }}>
       {children}
     </ResponsiveContext.Provider>
   );

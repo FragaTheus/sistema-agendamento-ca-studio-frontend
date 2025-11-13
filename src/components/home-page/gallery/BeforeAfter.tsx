@@ -27,8 +27,8 @@ export default function BeforeAfterCarousel() {
         loop
         style={
           {
-            width: "100%",
-            maxWidth: 600,
+            width: "90%",
+            maxWidth: 500,
             paddingBottom: "25px",
             "--swiper-pagination-color":
               theme.colorSchemes.light.palette.primary[400],

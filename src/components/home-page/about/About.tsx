@@ -1,7 +1,7 @@
 "use client";
 
 import { useResContext } from "@/context/responsive-context/ResponsiveContext";
-import { AspectRatio, Box, Button, Typography } from "@mui/joy";
+import { AspectRatio, Box, Button, Stack, Typography } from "@mui/joy";
 
 export const About = () => {
   const { isMobile } = useResContext();
@@ -35,19 +35,20 @@ export const About = () => {
         padding={isMobile ? "5px" : "10px"}
         gap={isMobile ? "5px" : "10px"}
       >
-        <Typography level="title-sm" sx={{ color: "primary.100" }}>
-          Oi! Sou a Cristiane Aguiar
-        </Typography>
+        <Stack>
+          <Typography level="title-md" sx={{ color: "primary.100" }}>
+            Cristiane Aguiar
+          </Typography>
+        </Stack>
         <Typography level="body-md" sx={{ color: "primary.100" }}>
-          Especialista em estética há mais de 10 anos. Apaixonada por realçar a
-          beleza natural e elevar a autoestima de cada cliente, construí uma
-          trajetória sólida na área da estética, marcada por dedicação,
-          sensibilidade e constante aprimoramento. Hoje, à frente do meu próprio
-          estúdio, ofereço um atendimento acolhedor e personalizado, onde cada
-          detalhe é pensado com amor e profissionalismo. Se você deseja
-          naturalidade, procedimentos exclusivos, produtos de alta qualidade e
-          um atendimento totalmente personalizado, conheça mais sobre o meu
-          trabalho e venha viver essa experiência no Studio Cristiane Aguiar.
+          Sou Cristiane Aguiar, especialista em estética há mais de 10 anos.
+          Apaixonada por realçar a beleza natural e elevar a autoestima,
+          construí uma trajetória sólida marcada por dedicação e constante
+          aprimoramento. À frente do meu estúdio, ofereço um atendimento
+          acolhedor e personalizado, onde cada detalhe é pensado com amor e
+          profissionalismo. Se você busca naturalidade, procedimentos
+          exclusivos, produtos de alta qualidade e um atendimento único, venha
+          viver essa experiência no Studio Cristiane Aguiar.
         </Typography>
       </Box>
     </Box>
