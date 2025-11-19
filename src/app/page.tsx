@@ -1,12 +1,12 @@
-import { About } from "@/components/home-page/about/About";
-import { FAQ } from "@/components/home-page/faq/FAQ";
-import { Gallery } from "@/components/home-page/gallery/Galerry";
-import { Procedures } from "@/components/home-page/procedures/Procedures";
-import { AppDrawer } from "@/components/main/drawer/Drawer";
-import { Footer } from "@/components/main/footer/Footer";
-import { Header } from "@/components/main/header/Header";
-import { HeroLayout } from "@/components/main/hero/HeroLayout";
+import { AppDrawer } from "@/components/drawer/Drawer";
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
+import { HeroLayout } from "@/components/hero/HeroLayout";
 import { SectionLayout } from "@/layouts/section-layout/SectionLayout";
+import { About } from "@/sections/home-page/about/About";
+import { FAQ } from "@/sections/home-page/faq/FAQ";
+import { Gallery } from "@/sections/home-page/gallery/Galerry";
+import { Procedures } from "@/sections/home-page/procedures/Procedures";
 import { Box } from "@mui/joy";
 
 export default function Home() {

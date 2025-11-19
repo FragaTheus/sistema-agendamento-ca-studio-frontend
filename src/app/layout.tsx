@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { Poppins } from "next/font/google";
-import { ThemeContextProvider } from "@/context/theme-context/ThemeContext";
-import { ResponsiveProvider } from "@/context/responsive-context/ResponsiveContext";
-import { DrawerContextProvider } from "@/context/drawer-context/DrawerContext";
 import { ClientProvider } from "@/provider/ClientProvider";
+import { SectionLayout } from "@/layouts/section-layout/SectionLayout";
 
 export const metadata: Metadata = {
   title: "Cristiane Aguiar Studio",
