@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { Poppins } from "next/font/google";
 import { ClientProvider } from "@/provider/ClientProvider";
-import { SectionLayout } from "@/layouts/section-layout/SectionLayout";
 
 export const metadata: Metadata = {
   title: "Cristiane Aguiar Studio",
