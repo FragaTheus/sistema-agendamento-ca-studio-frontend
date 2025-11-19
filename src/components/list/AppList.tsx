@@ -4,8 +4,9 @@ const Procedures = [
   {
     id: "UUID",
     name: "LashLifting",
-    description: "Ele serve pra nada",
-    price: 66.99,
+    description:
+      "Procedimento de elevação natural dos cílios, dando mais curvatura, definição e destaque ao olhar, sem necessidade de extensões...",
+    price: 79.9,
   },
 ];
 
@@ -20,7 +21,11 @@ export const AppList = () => {
         >
           <ListItemContent>
             <Typography level="body-lg">{p.name}</Typography>
-            <Typography level="body-sm" color="neutral">
+            <Typography
+              level="body-sm"
+              color="neutral"
+              sx={{ overflow: "hidden" }}
+            >
               {p.description}
             </Typography>
           </ListItemContent>

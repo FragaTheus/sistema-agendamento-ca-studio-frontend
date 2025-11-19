@@ -15,18 +15,6 @@ const inputs = [
     type: "email",
   },
   {
-    name: "password",
-    label: "Digite sua senha:",
-    placeholder: "Senha@123",
-    type: "password",
-  },
-  {
-    name: "confirmPassword",
-    label: "Confirme sua senha:",
-    placeholder: "Senha@123",
-    type: "password",
-  },
-  {
     name: "adminKey",
     label: "Digite a chave administrativa:",
     placeholder: "Chave@123",
