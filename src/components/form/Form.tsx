@@ -21,28 +21,27 @@ type FormInputsProps = {
 type FormProps = {
   inputs: FormInputsProps[];
   btnText: string;
+  onSubmit: (data: any) => void | Promise<void>; // ✔️ adicionado
 };
 
-export const AppForm = ({ inputs, btnText }: FormProps) => {
+export const AppForm = ({ inputs, btnText, onSubmit }: FormProps) => {
   if (!inputs || inputs.length === 0) {
-    return null; // evita inputs undefined
+    return null;
   }
 
   const defaultValues = inputs.reduce((acc, field) => {
-    acc[field.name] = ""; // nunca undefined
+    acc[field.name] = "";
     return acc;
   }, {} as Record<string, string>);
 
   const { control, handleSubmit } = useForm({
     defaultValues,
   });
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
+
   return (
     <Stack
       component={"form"}
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit)} // ✔️ usando a função recebida
       width={"70%"}
       height={"auto"}
       spacing={"5px"}
@@ -64,7 +63,7 @@ export const AppForm = ({ inputs, btnText }: FormProps) => {
                   type={i.type}
                   placeholder={i.placeholder}
                   {...f}
-                ></Input>
+                />
                 {fs.error && (
                   <FormHelperText>{fs.error.message}</FormHelperText>
                 )}
@@ -73,6 +72,7 @@ export const AppForm = ({ inputs, btnText }: FormProps) => {
           />
         ))}
       </Box>
+
       <Button variant="solid" type="submit">
         {btnText}
       </Button>
